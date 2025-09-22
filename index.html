@@ -163,17 +163,18 @@
           //     viewData += `<i class="fa-solid fa-square"  onclick="yesDone(${i})"></i>`;
           //   }
           if (item.done) {
-            viewData += `<i class="fa-solid fa-square-check " onclick="done(${i})"></i>`;
+            viewData += `<i class="fa-solid fa-square-check " onclick="done(${i})"></i>
+                         <i class="fa-solid fa-pen" onclick=""></i>
+                         <i class="fa-solid fa-trash" onclick=""></i>`;
           } else {
-            viewData += `<i class="fa-solid fa-square"  onclick="done(${i})"></i>`;
+            viewData += `<i class="fa-solid fa-square"  onclick="done(${i})"></i>
+             <i class="fa-solid fa-pen" onclick="modi(${i},'${listView[i].todo}')"></i>
+             <i class="fa-solid fa-trash" onclick="del(${i})"></i>`;
           }
 
-          viewData += `
-                    
-                    <i class="fa-solid fa-pen" onclick="modi(${i},'${listView[i].todo}')"></i>
-                    <i class="fa-solid fa-trash" onclick="del(${i})"></i>
-                </div>
-                </li>
+          viewData += ` 
+                   </div>
+                 </li>
             `;
         });
         viewDataElem.innerHTML = viewData;
